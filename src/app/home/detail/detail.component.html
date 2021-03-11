@@ -1,0 +1,12 @@
+<div class="modal-container" *ngIf="detail">
+  <img [src]="imageData+detail.poster_path">
+  <div class="modal-content">
+    <h2>{{ detail.title }}</h2>
+    <i>{{ detail.tagline }}</i>
+    <b>Score : {{ detail.vote_average }}</b>
+    <div class="overview">
+      {{ detail.overview }}
+    </div>
+    <button (click)="detail = !detail"><b>Close</b></button>
+  </div>
+</div>

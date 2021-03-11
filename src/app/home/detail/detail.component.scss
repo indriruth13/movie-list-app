@@ -1,0 +1,49 @@
+@import 'src/styles.scss';
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  margin: 24px;
+  padding: 100px;
+  color: white;
+  display: flex;
+  img {
+    width: 400px;
+  }
+  .modal-content {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    margin-left: 40px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 36px;
+    }
+    b {
+      margin-top: 12px;
+      color: $primary;
+    }
+    .overview {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+    button {
+      width: 100px;
+      padding: 8px;
+      margin-top: 24px;
+      background: $primary;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      b {
+        color: white;
+      }
+    }
+  }
+}

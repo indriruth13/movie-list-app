@@ -1,0 +1,46 @@
+@import 'src/styles.scss';
+
+.content-container {
+  position: absolute;
+  top: 26%;
+  left: 40%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 48px;
+  border-radius: 8px;
+  .email-field, .password-field, .submit {
+    margin-bottom: 0.5em;
+  }
+  .submit {
+    width: 100%;
+    background: $primary;
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+      transition: 0.3s;
+    }
+  }
+  .forget {
+    text-decoration: none;
+    color: $gray-secondary;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+  .mat-form-field-flex {
+    background: #333;
+    padding: 10px;
+    border-radius: 2px;
+    height: 50px;
+  }
+  .mat-form-field-label, .mat-focused, .mat-input-element {
+    color: $gray-secondary !important;
+    caret-color: red;
+  }
+  .mat-form-field-infix {
+    border-top: .4em solid transparent;
+  }
+}
+
+.mat-form-field.mat-focused {
+  border-bottom: red;
+}

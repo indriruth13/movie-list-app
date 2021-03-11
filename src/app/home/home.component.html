@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="navbar">
+    <h1>Movie App</h1>
+    <div class="search">
+      <mat-form-field>
+        <input placeholder="Search" (keyup.enter)="searchFilter($event)" (input)="searchFilter($event)" matInput>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="card-container w-full">
+    <mat-card 
+      *ngFor="let movie of movies" 
+      (mouseover)="getGenres(movie.genre_ids); movie.hovered = true" 
+      (mouseleave)="movie.hovered = false; selectedGenre = []"
+      (click)="getDetail(movie.id)"
+    >
+      <img [src]="imageUrl+movie.poster_path" alt="Poster Image" *ngIf="movie.poster_path">
+      <img src="https://placeimg.com/150/250/tech" alt="Poster Image" *ngIf="!movie.poster_path">
+      <mat-card-content *ngIf="movie.hovered">
+        <span>{{ movie.release_date.split('-')[0] }}</span>
+        <div class="genres">
+          <div *ngFor="let genre of selectedGenre">
+            <span>{{ genre }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <app-detail [detail]="detail" [imageData]="imageUrl"></app-detail>
+</div>

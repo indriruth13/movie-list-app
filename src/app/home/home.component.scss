@@ -1,0 +1,79 @@
+@import 'src/styles.scss';
+
+.container {
+  padding: 40px 80px;
+  background: $black-bg;  /* fallback for old browsers */
+  height: 100%;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 30px;
+      color: $primary;
+      padding-left: 26px;
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      button {
+        padding-bottom: 4px;
+      }
+    }
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    cursor: pointer;
+    .mat-card {
+      background: transparent;
+      height: 100%;
+      padding: 8px;
+      margin: 10px 20px;
+      &:hover {
+        transform: scale(1.2);
+        z-index: 1;
+        transition: all .6s ease-in-out;
+        transform-origin: 50% 50%;
+        transform-box: fill-box;
+        background: $secondary;
+      }
+      img {
+        width: 150px;
+        height: 250px;
+        text-align: center;
+      }
+      .mat-card-content {
+        color: white;
+        font-size: 10px;
+      }
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        div:not(:last-child):after {
+          content: ' \2022';
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .mat-form-field {
+  .mat-form-field-label, .mat-form-field-ripple, .mat-form-field-required-marker, .mat-input-element {
+    color: white;
+  }
+  .mat-form-field-ripple, .mat-form-field-underline {
+    background-color: white;
+  }
+}
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label, .mat-form-field-ripple, .mat-form-field-required-marker, .mat-input-element {
+    color: white;
+  }
+  .mat-form-field-ripple, .mat-form-field-underline {
+    background-color: white;
+  }
+}

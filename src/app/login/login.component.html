@@ -1,0 +1,40 @@
+<mat-card class="primary-bg">
+  <mat-card-content class="content-container">
+    <h2 class="text-white">Sign In</h2>
+    <form 
+      (ngSubmit)="onSubmit()" 
+      name="loginForm" 
+      [formGroup]="loginForm">
+      <div class="email-field">
+        <mat-form-field>
+          <input placeholder="Email" formControlName="email" matInput required />
+          <mat-error *ngIf="!loginForm.controls['email'].valid && loginForm.value.email">
+            Email is invalid
+          </mat-error>
+          <mat-error *ngIf="!loginForm.value.email">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="password-field">
+        <mat-form-field>
+          <input placeholder="Password" formControlName="password" matInput [type]="hide ? 'password' : 'text'" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'" [attr.aira-pressed]="hide"
+            class="text-secondary"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid && loginForm.value.password">
+            Password should be at least 8 character
+          </mat-error>
+          <mat-error *ngIf="!loginForm.value.password">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-flat-button color="primary" class="submit">Login</button>
+      <span><a routerLink="" class="forget">Forgot Password?</a></span>
+    </form>
+  </mat-card-content>
+</mat-card>
